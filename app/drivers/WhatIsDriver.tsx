@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function WhatIsDriver() {
   return (
-    <section className="py-20 bg-white text-slate-900 border-b border-slate-100">
+    <section className="py-20 bg-white text-slate-900 border-b border-slate-100" id="what-is-a-driver">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid Wrapper */}
