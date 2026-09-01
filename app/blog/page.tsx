@@ -49,69 +49,125 @@ export default async function BlogPage({
   const featuredTopic = filteredTopics[0] ?? blogTopics[0];
 
   return (
-    <section className="bg-slate-50 py-16 text-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
-              <Sparkles className="h-3.5 w-3.5" />
-              PrintCare Journal
-            </span>
-            <h1 className="mt-4 text-3xl font-extrabold tracking-[-0.05em] text-slate-900 sm:text-4xl lg:text-5xl">
-              {cleanedQuery ? `Search results for “${cleanedQuery}”` : 'Helpful printer guides for real life.'}
-            </h1>
-          </div>
+    <>
+      <section className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 py-16 text-white sm:py-20">
+        <div className="pointer-events-none absolute left-1/4 top-0 h-96 w-96 rounded-full bg-[#1963ff]/15 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
 
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 self-start rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
-          >
-            Back home
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-
-        <div className="relative mb-12 overflow-hidden rounded-[32px] bg-slate-900 p-8 text-white shadow-[0_30px_80px_rgba(15,23,42,0.14)] sm:p-10">
-          <div className="pointer-events-none absolute -right-12 top-0 h-96 w-96 rounded-full bg-[#1963ff]/10 blur-3xl" />
-          <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
-
-          <div className="relative z-10 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <div className="space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-blue-100">
-                <ShieldCheck className="h-3.5 w-3.5 text-blue-300" />
-                Verified fixes & tutorials
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+            <div className="space-y-6 text-left lg:col-span-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#1963ff]/30 bg-[#1963ff]/20 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-blue-400">
+                <ShieldCheck className="h-4 w-4" />
+                <span>PrintCare Journal & Support Library</span>
               </div>
 
-              <h2 className="max-w-xl text-3xl font-extrabold tracking-[-0.05em] text-white sm:text-4xl lg:text-5xl">
-                Clear answers for printer problems that interrupt your day.
-              </h2>
+              <h1 className="text-3xl font-extrabold leading-[1.15] tracking-tight text-white sm:text-5xl">
+                {cleanedQuery ? `Search results for “${cleanedQuery}”` : 'Clear fixes, setup guides, and printer help you can trust.'}
+              </h1>
 
-              <p className="max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
-                Explore practical troubleshooting, setup guides, and expert advice for HP, Canon, Epson, Brother, and more.
+              <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
+                Search practical troubleshooting articles for offline printers, Wi‑Fi issues, toner problems, setup questions, and everyday support needs across major brands.
               </p>
+
+              <div className="grid grid-cols-3 gap-4 border-t border-slate-800 pt-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-blue-400">
+                    <Sparkles className="h-4 w-4" />
+                    Verified tips
+                  </div>
+                  <p className="text-xs text-slate-400">Simple, useful steps</p>
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-blue-400">
+                    <Search className="h-4 w-4" />
+                    Fast search
+                  </div>
+                  <p className="text-xs text-slate-400">Find answers quickly</p>
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-blue-400">
+                    <ShieldCheck className="h-4 w-4" />
+                    Trusted advice
+                  </div>
+                  <p className="text-xs text-slate-400">HP, Canon, Epson</p>
+                </div>
+              </div>
             </div>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-              <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-300">Guides available</div>
-              <div className="mt-3 text-4xl font-black tracking-tight text-white">{blogTopics.length}</div>
-              <div className="mt-2 text-sm text-slate-300">Quick and practical support articles</div>
+            <div className="lg:col-span-6">
+              <div className="space-y-5 rounded-3xl border border-slate-700 bg-slate-800/90 p-6 text-left shadow-2xl backdrop-blur-md sm:p-8">
+                <div className="text-xs font-extrabold uppercase tracking-[0.2em] text-blue-400">
+                  Search the blog hub
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Search by issue or model
+                  </label>
+                  <form action="/blog" method="get" className="flex gap-2">
+                    <div className="relative flex-1">
+                      <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                      <input
+                        type="text"
+                        name="q"
+                        defaultValue={cleanedQuery}
+                        placeholder="e.g. offline printer, toner, wifi, canon..."
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900 py-2.5 pl-10 pr-4 text-xs text-white placeholder-slate-500 transition focus:border-[#1963ff] focus:outline-none sm:text-sm"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#1963ff] px-5 py-2.5 text-xs font-bold text-white transition hover:bg-[#1554db] sm:text-sm"
+                    >
+                      <Search className="h-4 w-4" />
+                      Search
+                    </button>
+                  </form>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Popular topics
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {quickSearches.map((term) => (
+                      <Link
+                        key={term}
+                        href={`/blog?q=${encodeURIComponent(term)}`}
+                        className="rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-xs font-medium text-slate-200 transition hover:border-blue-400 hover:text-white"
+                      >
+                        {term}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="relative z-10 mt-8 flex flex-wrap items-center gap-3 border-t border-slate-800 pt-6">
-            {quickSearches.map((term) => (
-              <Link
-                key={term}
-                href={`/blog?q=${encodeURIComponent(term)}`}
-                className="rounded-full border border-slate-700 bg-slate-800/80 px-3 py-1.5 text-xs font-medium text-slate-200 transition hover:border-blue-400 hover:text-white"
-              >
-                {term}
-              </Link>
-            ))}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-4 border-t border-slate-800/80 pt-6 text-xs font-medium text-slate-400">
+            <span className="flex items-center gap-1.5 font-bold text-slate-200">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#1963ff]" />
+              Explore sections:
+            </span>
+            <a href="#featured-guide" className="underline-offset-4 underline transition hover:text-white">
+              Featured guide
+            </a>
+            <span>•</span>
+            <a href="#latest-guides" className="underline-offset-4 underline transition hover:text-white">
+              Latest guides
+            </a>
+            <span>•</span>
+            <a href="#helpful-tips" className="underline-offset-4 underline transition hover:text-white">
+              Helpful tips
+            </a>
           </div>
         </div>
+      </section>
 
-        <div className="mb-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+        <div id="featured-guide" className="mb-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {categoryCards.map(({ name, count, icon: Icon }) => (
             <Link
               key={name}
@@ -131,7 +187,7 @@ export default async function BlogPage({
           ))}
         </div>
 
-        <div className="mb-12 grid grid-cols-1 items-stretch gap-6 xl:grid-cols-12">
+        <div id="latest-guides" className="mb-12 grid grid-cols-1 items-stretch gap-6 xl:grid-cols-12">
           <article className="flex flex-col justify-between overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_22px_50px_rgba(15,23,42,0.04)] xl:col-span-8">
             <div className="space-y-4 p-6 sm:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3">
@@ -207,7 +263,7 @@ export default async function BlogPage({
           </aside>
         </div>
 
-        <div className="mb-6 flex flex-col justify-between gap-3 md:flex-row md:items-center">
+        <div id="helpful-tips" className="mb-6 flex flex-col justify-between gap-3 md:flex-row md:items-center">
           <h2 className="text-xl font-extrabold tracking-[-0.04em] text-slate-900 sm:text-2xl">
             {cleanedQuery ? 'Matched articles' : 'Latest troubleshooting articles'}
           </h2>
@@ -276,6 +332,6 @@ export default async function BlogPage({
           </div>
         )}
       </div>
-    </section>
+    </>
   );
 }
