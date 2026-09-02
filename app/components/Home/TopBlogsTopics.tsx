@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { ArrowRight, Clock3, Sparkles } from 'lucide-react';
-import { blogTopics } from '@/app/data/blogs';
+import Link from "next/link";
+import { ArrowRight, Clock3, Sparkles } from "lucide-react";
+import { blogTopics } from "@/app/data/blogs";
 
 export default function TopBlogsTopics() {
   return (
@@ -54,11 +54,15 @@ export default function TopBlogsTopics() {
                   {topic.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-600">{topic.excerpt}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {topic.excerpt}
+                </p>
               </div>
 
               <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-4">
-                <span className="text-[11px] font-medium text-slate-500">Updated guide</span>
+                <span className="text-[11px] font-medium text-slate-500">
+                  Updated guide
+                </span>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 group-hover:underline">
                   Read article
                   <ArrowRight className="h-4 w-4" />

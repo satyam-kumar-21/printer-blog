@@ -179,6 +179,8 @@ export default async function BlogPage({
       </section>
 
       <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+        {!cleanedQuery && (
+          <>
         <div id="featured-guide" className="mb-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {categoryCards.map(({ name, count, icon: Icon }) => (
             <Link
@@ -271,6 +273,8 @@ export default async function BlogPage({
             </div>
           </aside>
         </div>
+          </>
+        )}
 
         <div id="helpful-tips" className="mb-6 flex flex-col justify-between gap-3 md:flex-row md:items-center">
           <h2 className="text-xl font-extrabold tracking-[-0.04em] text-slate-900 sm:text-2xl">

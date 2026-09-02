@@ -353,6 +353,215 @@ export const blogTopics: BlogTopic[] = [
         body: 'Avoid relying solely on generic OS scan tools if your model requires specialized OCR software. Download the official manufacturer scanner software package to restore full multi-page scanning features.'
       }
     ]
+  },
+  {
+    slug: 'hp-printer-offline',
+    title: 'HP Printer Says Offline: Quick Connection Fixes',
+    category: 'HP Support',
+    readTime: '5 min read',
+    publishedAt: 'June 24, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Restore an HP printer that shows offline by checking the network, clearing the queue, and reconnecting the correct HP device entry.',
+    highlight: 'HP connection fix',
+    details: 'HP printers can appear offline after a router change, sleep cycle, or Windows update. These checks isolate the connection problem before you reinstall software or replace hardware.',
+    metaTitle: 'HP Printer Offline Fix | Reconnect HP Printer',
+    metaDescription: 'Fix an HP printer that says offline by checking Wi-Fi, clearing print jobs, and reconnecting the printer on Windows or macOS.',
+    keywords: ['HP printer offline', 'HP printer not connected', 'HP Wi-Fi printer fix', 'HP offline troubleshooting'],
+    sections: [
+      { heading: 'Confirm the HP printer network', body: 'Print or view the HP network configuration page and confirm the printer is connected to the same Wi-Fi network as your computer. Guest networks and changed router names are common causes of an offline status.' },
+      { heading: 'Clear the HP print queue', body: 'Open the printer queue, cancel stalled jobs, and restart the printer. A blocked job can keep an otherwise connected HP printer marked offline.' },
+      { heading: 'Reconnect the printer', body: 'Remove duplicate HP entries from system printer settings and add the active device again. Use HP Smart or the official HP setup utility when the printer is not discovered automatically.' }
+    ]
+  },
+  {
+    slug: 'hp-print-quality-lines',
+    title: 'HP Printer Printing Lines or Faded Pages',
+    category: 'HP Support',
+    readTime: '6 min read',
+    publishedAt: 'June 27, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Fix lines, blank bands, and faded output from an HP printer with a printhead check, cartridge inspection, and alignment test.',
+    highlight: 'HP print quality',
+    details: 'Lines and faded areas on HP pages usually point to blocked nozzles, low ink, dirty contacts, or an alignment problem. Test the output before replacing cartridges.',
+    metaTitle: 'HP Printer Printing Lines | Fix Faded HP Prints',
+    metaDescription: 'Troubleshoot HP printers that print lines, blank bands, or faded pages with simple cleaning and alignment checks.',
+    keywords: ['HP printer lines', 'HP faded print', 'HP printhead cleaning', 'HP print quality problem'],
+    sections: [
+      { heading: 'Print a quality diagnostic page', body: 'Use the HP printer control panel or HP Smart maintenance tools to print a quality report. Missing colors and repeated bands help identify whether the issue is ink delivery or alignment.' },
+      { heading: 'Clean and reseat the cartridges', body: 'Remove and reinstall each cartridge, then gently wipe accessible contacts with a dry lint-free cloth. Do not touch the ink nozzles or use liquid inside the printer.' },
+      { heading: 'Align the printhead after cleaning', body: 'Run the HP alignment routine and print another test page. If defects remain after a normal cleaning cycle, the cartridge or printhead may be at the end of its service life.' }
+    ]
+  },
+  {
+    slug: 'canon-printer-not-printing',
+    title: 'Canon Printer Not Printing: What to Check First',
+    category: 'Canon Support',
+    readTime: '5 min read',
+    publishedAt: 'June 29, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Get a Canon printer printing again by checking the selected device, paper path, ink status, and stalled print queue.',
+    highlight: 'Canon troubleshooting',
+    details: 'A Canon printer may accept a job without printing when the wrong device is selected, the queue is paused, or the printer is waiting for paper or ink attention.',
+    metaTitle: 'Canon Printer Not Printing | Quick Fix Guide',
+    metaDescription: 'Fix a Canon printer that will not print by checking the queue, device selection, paper, ink, and connection.',
+    keywords: ['Canon printer not printing', 'Canon print job stuck', 'Canon printer fix', 'Canon printer queue'],
+    sections: [
+      { heading: 'Check the selected Canon printer', body: 'Confirm your application is sending the job to the active Canon model instead of an old copy, PDF printer, or offline entry. Set the correct Canon device as the default when needed.' },
+      { heading: 'Check paper and ink alerts', body: 'Look at the Canon display or status utility for an open cover, paper mismatch, low ink, or cartridge warning. Resolve the alert before sending the job again.' },
+      { heading: 'Restart the queue and printer', body: 'Cancel pending documents, power cycle the Canon printer, and send a one-page test. Re-add the printer if the queue continues to pause.' }
+    ]
+  },
+  {
+    slug: 'canon-wifi-disconnects',
+    title: 'Canon Printer Keeps Disconnecting from Wi-Fi',
+    category: 'Canon Support',
+    readTime: '6 min read',
+    publishedAt: 'July 2, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Stop repeated Canon Wi-Fi disconnects by resetting the network setup, matching the correct band, and refreshing the printer port.',
+    highlight: 'Canon wireless fix',
+    details: 'Canon wireless printers can lose contact after router changes, weak signal conditions, or an old IP address saved on the computer.',
+    metaTitle: 'Canon Printer Keeps Disconnecting | Wi-Fi Fix',
+    metaDescription: 'Resolve repeated Canon printer Wi-Fi disconnections by checking the router band, resetting network settings, and refreshing the printer connection.',
+    keywords: ['Canon Wi-Fi disconnects', 'Canon printer network problem', 'Canon wireless printer fix', 'Canon printer Wi-Fi setup'],
+    sections: [
+      { heading: 'Move the printer closer for setup', body: 'Place the Canon printer near the router during setup and confirm the computer is on the same network. Avoid using a guest network while pairing the device.' },
+      { heading: 'Reset Canon network settings', body: 'Use the printer network menu to restore wireless settings, then run the Wi-Fi setup wizard again with the current router name and password.' },
+      { heading: 'Refresh the saved printer connection', body: 'Remove the old Canon printer entry from your computer and add the discovered device again. This replaces a stale port or IP address.' }
+    ]
+  },
+  {
+    slug: 'epson-printer-not-connecting',
+    title: 'Epson Printer Not Connecting to Wi-Fi',
+    category: 'Epson Support',
+    readTime: '6 min read',
+    publishedAt: 'July 5, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Reconnect an Epson printer that cannot join Wi-Fi by checking the network band, signal, password, and saved device entry.',
+    highlight: 'Epson wireless fix',
+    details: 'Epson connection failures often happen after a router replacement or when the printer is asked to join a network it cannot use. A clean setup is usually faster than repeated retries.',
+    metaTitle: 'Epson Printer Not Connecting to Wi-Fi | Fix Guide',
+    metaDescription: 'Fix Epson printer Wi-Fi connection problems by checking network compatibility, resetting wireless settings, and adding the printer again.',
+    keywords: ['Epson printer not connecting', 'Epson Wi-Fi problem', 'Epson wireless setup', 'Epson printer network fix'],
+    sections: [
+      { heading: 'Check the network requirements', body: 'Confirm the Epson model supports the router band and security mode in use. Many older models require a 2.4 GHz network and cannot join a guest network.' },
+      { heading: 'Re-enter the wireless password', body: 'Open Epson network setup and carefully enter the current Wi-Fi password, including capitalization. A successful connection should show a network status or IP address.' },
+      { heading: 'Add the Epson printer again', body: 'Delete the old printer entry on your computer and add the Epson device after it reconnects. This clears old network port information.' }
+    ]
+  },
+  {
+    slug: 'epson-paper-feed-problem',
+    title: 'Epson Printer Paper Feed Problems',
+    category: 'Epson Support',
+    readTime: '5 min read',
+    publishedAt: 'July 8, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Fix Epson printers that pull multiple sheets, refuse paper, or feed pages crooked with tray, roller, and paper setting checks.',
+    highlight: 'Epson paper handling',
+    details: 'Epson feed problems are commonly caused by damp or curled paper, an overloaded tray, or dust on the pickup rollers.',
+    metaTitle: 'Epson Printer Paper Feed Problem | Fix Paper Jams',
+    metaDescription: 'Troubleshoot Epson paper feed failures, multiple sheets, crooked pages, and paper jams with safe tray and roller checks.',
+    keywords: ['Epson paper feed problem', 'Epson paper jam', 'Epson printer pulls multiple sheets', 'Epson paper not feeding'],
+    sections: [
+      { heading: 'Reload the Epson paper tray', body: 'Remove the stack, fan the sheets, and reload fewer pages against the tray guides. Replace paper that is curled, damp, or stored in a humid area.' },
+      { heading: 'Match the paper settings', body: 'Select the correct paper size and type in the print dialog. A mismatch can make the printer pause or feed media incorrectly.' },
+      { heading: 'Inspect the feed path', body: 'Turn the printer off and remove visible scraps without forcing rollers or internal parts. If the issue continues, use the Epson maintenance utility or service documentation for roller cleaning.' }
+    ]
+  },
+  {
+    slug: 'brother-printer-paper-jam',
+    title: 'Brother Printer Paper Jam Error After Clearing Paper',
+    category: 'Brother Support',
+    readTime: '5 min read',
+    publishedAt: 'July 11, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Clear a persistent Brother paper jam warning by checking hidden scraps, the rear door, rollers, and the sensor path.',
+    highlight: 'Brother jam fix',
+    details: 'Brother printers can keep a paper jam message after the visible sheet is removed because a small scrap remains near a sensor or rear access door.',
+    metaTitle: 'Brother Paper Jam Error | Clear Persistent Jam Warning',
+    metaDescription: 'Fix a Brother printer paper jam message that remains after clearing the page with safe inspection and reset steps.',
+    keywords: ['Brother paper jam', 'Brother paper jam error', 'Brother printer stuck paper', 'Brother jam warning'],
+    sections: [
+      { heading: 'Inspect every access door', body: 'Turn off the Brother printer and check the front, rear, duplexer, and toner access areas. Pull paper in the direction of travel and remove small torn pieces.' },
+      { heading: 'Check the tray and guides', body: 'Reload straight, dry paper and make sure the tray guides touch the stack without squeezing it. An overfilled tray can trigger another feed failure.' },
+      { heading: 'Reset and test', body: 'Close all doors firmly, reconnect power, and wait for the ready state. Print a one-page test before sending a larger document.' }
+    ]
+  },
+  {
+    slug: 'brother-printer-not-detected',
+    title: 'Brother Printer Not Detected on Windows',
+    category: 'Brother Support',
+    readTime: '6 min read',
+    publishedAt: 'July 14, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Make Windows detect a Brother printer again by checking USB or Wi-Fi, removing duplicate entries, and installing the correct package.',
+    highlight: 'Brother connection fix',
+    details: 'Windows may not detect a Brother printer when the cable, network, port, or driver package does not match the current connection.',
+    metaTitle: 'Brother Printer Not Detected on Windows | Fix Guide',
+    metaDescription: 'Resolve Brother printer detection problems on Windows with USB, Wi-Fi, duplicate device, and driver checks.',
+    keywords: ['Brother printer not detected', 'Brother Windows printer fix', 'Brother USB printer problem', 'Brother printer driver'],
+    sections: [
+      { heading: 'Check the physical or wireless connection', body: 'For USB models, connect directly to the computer instead of a hub and try another cable. For Wi-Fi models, confirm the printer and computer use the same network.' },
+      { heading: 'Remove duplicate Brother entries', body: 'Delete old offline or copy entries in Windows printer settings. Duplicate ports can cause Windows to send jobs to a device that is no longer present.' },
+      { heading: 'Install the matching package', body: 'Download the official Brother full driver and software package for the exact model and Windows version, then add the printer when the installer requests it.' }
+    ]
+  },
+  {
+    slug: 'xerox-printer-offline',
+    title: 'Xerox Printer Offline: Network and Queue Fixes',
+    category: 'Xerox Support',
+    readTime: '6 min read',
+    publishedAt: 'July 17, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Bring a Xerox office printer back online by checking its network address, print queue, and device status in Windows or macOS.',
+    highlight: 'Xerox office fix',
+    details: 'Xerox printers can show offline when the device receives a new IP address, a queue is paused, or the workstation has an old port saved.',
+    metaTitle: 'Xerox Printer Offline Fix | Network Troubleshooting',
+    metaDescription: 'Fix a Xerox office printer that shows offline by checking the network address, queue, and saved printer port.',
+    keywords: ['Xerox printer offline', 'Xerox network printer fix', 'Xerox print queue', 'Xerox office printer problem'],
+    sections: [
+      { heading: 'Check the Xerox device status', body: 'Use the printer control panel to confirm it is ready and connected to the office network. Print a configuration report to find its current IP address.' },
+      { heading: 'Clear paused jobs', body: 'Open the workstation print queue, cancel failed documents, and confirm the queue is not paused or set to work offline.' },
+      { heading: 'Refresh the printer port', body: 'Compare the saved port with the Xerox IP address. Update or recreate the printer connection when the router or DHCP service assigned a new address.' }
+    ]
+  },
+  {
+    slug: 'xerox-print-quality',
+    title: 'Xerox Print Quality Problems: Streaks and Faded Text',
+    category: 'Xerox Support',
+    readTime: '5 min read',
+    publishedAt: 'July 20, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Improve streaky, pale, or uneven Xerox output by checking supplies, paper settings, and the printer maintenance reports.',
+    highlight: 'Xerox print quality',
+    details: 'Xerox quality defects often point to low toner, a worn imaging component, unsuitable paper, or a maintenance cycle that needs to run.',
+    metaTitle: 'Xerox Print Quality Problems | Streaks and Faded Prints',
+    metaDescription: 'Troubleshoot Xerox printer streaks, faded text, and uneven output with supply, paper, and maintenance checks.',
+    keywords: ['Xerox print quality', 'Xerox faded print', 'Xerox streaks', 'Xerox toner problem'],
+    sections: [
+      { heading: 'Print a Xerox quality report', body: 'Use the device information or troubleshooting menu to print a quality page. Compare repeated marks across the page to identify a supply or imaging problem.' },
+      { heading: 'Check toner and paper', body: 'Confirm the toner level and install the correct cartridge for the Xerox model. Store paper flat and choose the matching media type in the print settings.' },
+      { heading: 'Run only the recommended maintenance', body: 'Use the printer maintenance routine shown for the specific model. If defects remain after a new supply and correct settings, the imaging unit may need service.' }
+    ]
+  },
+  {
+    slug: 'xerox-scan-to-email-not-working',
+    title: 'Xerox Scan to Email Not Working',
+    category: 'Xerox Support',
+    readTime: '7 min read',
+    publishedAt: 'July 23, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt: 'Troubleshoot Xerox scan-to-email failures by checking SMTP settings, authentication, time settings, and the network connection.',
+    highlight: 'Xerox workflow fix',
+    details: 'Xerox multifunction devices may scan correctly but fail to email when the mail server requires updated authentication, a valid time, or a different security port.',
+    metaTitle: 'Xerox Scan to Email Not Working | SMTP Fixes',
+    metaDescription: 'Fix Xerox scan-to-email problems by checking SMTP server, authentication, date and time, DNS, and network settings.',
+    keywords: ['Xerox scan to email not working', 'Xerox SMTP setup', 'Xerox scanner email error', 'Xerox multifunction printer scan'],
+    sections: [
+      { heading: 'Confirm the Xerox network connection', body: 'Verify the device has a valid IP address, gateway, and DNS settings. A Xerox device can print locally while still failing to reach the mail server.' },
+      { heading: 'Review SMTP details', body: 'Check the outgoing mail server, port, encryption method, sender address, and authentication credentials supplied by your mail provider or administrator.' },
+      { heading: 'Check time and test delivery', body: 'Make sure the Xerox device date and time are accurate because secure mail connections can reject an incorrect certificate time. Send a small test scan after saving the settings.' }
+    ]
   }
 ];
 

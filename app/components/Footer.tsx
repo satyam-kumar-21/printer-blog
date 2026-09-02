@@ -119,12 +119,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/wireless-setup" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/blog/wifi-printer-setup" className="text-slate-400 hover:text-white transition-colors">
                   Wi-Fi Setup Guides
                 </Link>
               </li>
               <li>
-                <Link href="/offline-fix" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/blog/fix-printer-offline" className="text-slate-400 hover:text-white transition-colors">
                   Fix Printer Offline
                 </Link>
               </li>

@@ -1,18 +1,43 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Search, ArrowRight, CheckCircle2, Printer, Wrench, FileText, Download, ShieldCheck } from 'lucide-react';
+import { Search, CheckCircle2, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function HomeHero() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<'fix' | 'drivers' | 'manuals'>('fix');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('hp');
 
+  const tabContent = {
+    fix: {
+      label: 'Search by model or error',
+      placeholder: 'e.g. printer offline or E4 error',
+    },
+    drivers: {
+      label: 'Search by printer model',
+      placeholder: 'e.g. LaserJet M404n',
+    },
+    manuals: {
+      label: 'Search setup guides and manuals',
+      placeholder: 'e.g. wireless printer setup',
+    },
+  }[activeTab];
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!searchQuery.trim()) return;
-    console.log(`Searching database for: ${searchQuery} under ${selectedBrand}`);
+    const query = searchQuery.trim();
+
+    if (activeTab === 'drivers') {
+      router.push(`/drivers${query ? `?model=${encodeURIComponent(query)}` : ''}`);
+      return;
+    }
+
+    if (!query) return;
+
+    router.push(`/blog?q=${encodeURIComponent(query)}`);
   };
 
   return (
@@ -73,11 +98,13 @@ export default function HomeHero() {
 
           <div className="animate-fade-up">
             <div className="rounded-[30px] border border-slate-700 bg-slate-800/90 p-4 shadow-[0_28px_60px_rgba(15,23,42,0.25)] backdrop-blur-md sm:p-5">
-              <div className="mb-4 flex items-center justify-between rounded-2xl border border-slate-700 bg-slate-900/60 p-2">
+              <div role="tablist" aria-label="Support resources" className="mb-4 flex items-center justify-between rounded-2xl border border-slate-700 bg-slate-900/60 p-2">
                 {['Fix problem', 'Get drivers', 'Manuals'].map((tab, index) => (
                   <button
                     key={tab}
                     type="button"
+                    role="tab"
+                    aria-selected={activeTab === (index === 0 ? 'fix' : index === 1 ? 'drivers' : 'manuals')}
                     onClick={() => setActiveTab(index === 0 ? 'fix' : index === 1 ? 'drivers' : 'manuals')}
                     className={`flex-1 rounded-xl px-3 py-2 text-xs font-semibold transition-all ${
                       activeTab === (index === 0 ? 'fix' : index === 1 ? 'drivers' : 'manuals')
@@ -115,26 +142,26 @@ export default function HomeHero() {
 
                 <div>
                   <label className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-slate-300">
-                    Search by model or error
+                    {tabContent.label}
                   </label>
-                  <div className="flex gap-2">
+                  <form onSubmit={handleSearch} className="flex gap-2">
                     <div className="relative flex-1">
                       <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                       <input
                         type="text"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Type model or error code"
+                        placeholder={tabContent.placeholder}
                         className="w-full rounded-xl border border-slate-700 bg-slate-800 py-3 pl-10 pr-3 text-sm text-white placeholder:text-slate-400 focus:border-[#1963ff] focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                       />
                     </div>
                     <button
-                      type="button"
+                      type="submit"
                       className="rounded-xl bg-[#1963ff] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#1554db]"
                     >
                       Search
                     </button>
-                  </div>
+                  </form>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 pt-2 text-xs text-slate-300">
