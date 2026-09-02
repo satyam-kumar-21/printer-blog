@@ -3,6 +3,13 @@
 import React, { useState } from 'react';
 import { Search, Download, ShieldCheck, Layers, Cpu, Wrench, CheckCircle } from 'lucide-react';
 
+const officialDriverPages: Record<string, string> = {
+  hp: 'https://support.hp.com/us-en/drivers/printers',
+  canon: 'https://www.usa.canon.com/support/software-and-drivers',
+  epson: 'https://epson.com/Support/sl/s',
+  brother: 'https://support.brother.com/g/b/productsearch.aspx?c=us&lang=en&content=dl',
+};
+
 export default function DriverHero() {
   const [selectedOS, setSelectedOS] = useState<'win11' | 'win10' | 'mac' | 'linux'>('win11');
   const [selectedBrand, setSelectedBrand] = useState('hp');
@@ -10,12 +17,13 @@ export default function DriverHero() {
 
   const handleHubSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!searchQuery.trim()) return;
-    console.log(`Searching hub for: ${searchQuery} (${selectedBrand} / ${selectedOS})`);
+    const officialDriverPage = officialDriverPages[selectedBrand];
+
+    window.open(officialDriverPage, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white py-16 sm:py-20 border-b border-slate-800 overflow-hidden">
+    <section className="relative bg-linear-to-b from-slate-900 via-slate-900 to-slate-950 text-white py-16 sm:py-20 border-b border-slate-800 overflow-hidden">
       
       {/* Background Glow Accents */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#1963ff]/15 rounded-full blur-3xl pointer-events-none" />

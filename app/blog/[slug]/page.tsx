@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, Clock3, Sparkles, ShieldCheck, Boo
 import { blogTopics, getBlogBySlug } from '../../data/blogs';
 
 const themeBySlug: Record<string, { accent: string; accentSoft: string; text: string; border: string; surface: string; dark: string; highlight: string; badge: string; note: string }> = {
-  'printer-offline-fix': {
+  'fix-printer-offline': {
     accent: '#2563eb',
     accentSoft: '#eaf3ff',
     text: '#1d4ed8',
@@ -107,7 +107,7 @@ const themeBySlug: Record<string, { accent: string; accentSoft: string; text: st
 };
 
 function getArticleTheme(slug: string) {
-  return themeBySlug[slug] ?? themeBySlug['printer-offline-fix'];
+  return themeBySlug[slug] ?? themeBySlug['fix-printer-offline'];
 }
 
 export function generateStaticParams() {

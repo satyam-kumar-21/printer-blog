@@ -21,7 +21,42 @@ export type BlogTopic = {
 
 export const blogTopics: BlogTopic[] = [
   {
-    slug: 'printer-offline-fix',
+    slug: 'driver-troubleshooting',
+    title: 'Printer Driver Troubleshooting: Common Problems and Fixes',
+    category: 'Drivers',
+    readTime: '7 min read',
+    publishedAt: 'June 22, 2026',
+    author: 'PrintCare Editorial Team',
+    excerpt:
+      'Fix missing, outdated, or incorrectly installed printer drivers with a practical troubleshooting checklist for Windows and macOS.',
+    highlight: 'Driver help',
+    details:
+      'Printer driver problems can cause offline messages, missing features, failed installations, and print jobs that never leave the queue. Work through these checks in order to identify the driver issue and restore reliable printing.',
+    metaTitle: 'Printer Driver Troubleshooting | Common Problems and Fixes',
+    metaDescription:
+      'Troubleshoot printer driver problems including failed installations, offline printers, missing features, and outdated driver packages on Windows and macOS.',
+    keywords: ['printer driver troubleshooting', 'printer driver problems', 'fix printer driver', 'printer driver not installed'],
+    sections: [
+      {
+        heading: 'Confirm the printer model and operating system',
+        body: 'Check the exact printer model shown on the device or its control panel, then confirm whether your computer runs Windows or macOS. Installing a driver for a similar model or a different operating system can leave the printer partially configured.'
+      },
+      {
+        heading: 'Remove duplicate or outdated printer entries',
+        body: 'Open your system printer settings and remove old entries for the same device, especially entries marked offline or copy. Add the printer again after installing the current driver package from the manufacturer.'
+      },
+      {
+        heading: 'Download the official driver package',
+        body: 'Use the printer manufacturer\'s official support page to find the software and driver package for your exact model. Avoid third-party download sites, and choose the package that matches your operating system version.'
+      },
+      {
+        heading: 'Restart the print service and test the connection',
+        body: 'After installation, restart the printer and computer, then print a test page. For network printers, confirm both devices use the same Wi-Fi network. For USB printers, reconnect the cable only after the installer asks you to do so.'
+      }
+    ]
+  },
+  {
+    slug: 'fix-printer-offline',
     title: 'Fix Printer Offline in 5 Minutes',
     category: 'Troubleshooting',
     readTime: '5 min read',

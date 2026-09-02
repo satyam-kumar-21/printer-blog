@@ -28,7 +28,7 @@ export default function WhatIsDriver() {
 
             <div className="pt-2">
               <Link 
-                href="/guides/driver-troubleshooting" 
+                href="/blog/driver-troubleshooting" 
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#1963ff] hover:underline"
               >
                 <span>Read complete troubleshooting handbook</span>
