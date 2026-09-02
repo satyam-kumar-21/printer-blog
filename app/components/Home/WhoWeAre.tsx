@@ -27,8 +27,8 @@ export default function WhoWeAre() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          <div className="md:col-span-2 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.05)] sm:p-8">
+        <div className="animate-stagger grid gap-5 md:grid-cols-3">
+          <div className="premium-card md:col-span-2 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.05)] sm:p-8">
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-md">
               <Shield className="h-5 w-5" />
             </div>
@@ -44,11 +44,11 @@ export default function WhoWeAre() {
             </Link>
           </div>
 
-          <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.05)] sm:p-8">
+          <div className="premium-card rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.05)] sm:p-8">
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 ring-1 ring-blue-200">
               <Cpu className="h-5 w-5" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900">14,000+ guides indexed</h3>
+            <h3 className="text-xl font-bold text-slate-900">100+ guides indexed</h3>
             <p className="mt-4 text-sm leading-7 text-slate-600">
               Covering HP, Canon, Epson, Brother, and other brands with documentation built for simple troubleshooting.
             </p>
@@ -57,7 +57,7 @@ export default function WhoWeAre() {
             </div>
           </div>
 
-          <div className="md:col-span-3 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.05)] sm:p-7">
+          <div className="premium-card md:col-span-3 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.05)] sm:p-7">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-md">

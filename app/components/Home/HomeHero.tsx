@@ -16,7 +16,7 @@ export default function HomeHero() {
   };
 
   return (
-    <section className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 py-16 text-white md:py-20">
+    <section className="relative overflow-hidden border-b border-slate-800 bg-linear-to-b from-slate-900 via-slate-900 to-slate-950 py-16 text-white md:py-20">
       <div className="absolute -left-16 top-24 h-64 w-64 rounded-full bg-[#1963ff]/15 blur-3xl" />
       <div className="absolute right-0 top-10 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
 

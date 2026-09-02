@@ -26,11 +26,12 @@ export default function TopBlogsTopics() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="animate-stagger grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {blogTopics.slice(0, 6).map((topic) => (
-            <article
+            <Link
               key={topic.slug}
-              className="group flex h-full flex-col justify-between rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_40px_rgba(15,23,42,0.03)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_25px_60px_rgba(37,99,235,0.08)]"
+              href={`/blog/${topic.slug}`}
+              className="premium-card group flex h-full flex-col justify-between rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_40px_rgba(15,23,42,0.03)] transition duration-200 hover:border-blue-200 hover:bg-white hover:shadow-[0_25px_60px_rgba(37,99,235,0.08)]"
             >
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
@@ -58,15 +59,12 @@ export default function TopBlogsTopics() {
 
               <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-4">
                 <span className="text-[11px] font-medium text-slate-500">Updated guide</span>
-                <Link
-                  href={`/blog/${topic.slug}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700"
-                >
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 group-hover:underline">
                   Read article
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

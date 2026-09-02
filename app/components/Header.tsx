@@ -51,6 +51,13 @@ export default function Header() {
 
   const matchingTopics = useMemo(() => getMatchingTopics(searchQuery), [searchQuery]);
 
+  const handleTopicClick = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
+    e.preventDefault();
+    setIsSearchOpen(false);
+    setSearchQuery('');
+    router.push(`/blog/${slug}`);
+  };
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const query = searchQuery.trim();
@@ -59,7 +66,9 @@ export default function Header() {
 
     setIsSearchOpen(false);
     setIsMobileMenuOpen(false);
-    router.push(`/blog?q=${encodeURIComponent(query)}`);
+
+    const matchingTopic = getMatchingTopics(query)[0];
+    router.push(matchingTopic ? `/blog/${matchingTopic.slug}` : `/blog?q=${encodeURIComponent(query)}`);
   };
 
   const isActive = (href: string) => {
@@ -69,11 +78,11 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.03)]">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3 transition-transform duration-200 hover:scale-[1.01]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 text-white shadow-[0_14px_28px_rgba(37,99,235,0.28)]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-linear-to-br from-blue-600 to-blue-500 text-white shadow-[0_14px_28px_rgba(37,99,235,0.28)]">
               <Printer className="h-5 w-5" />
             </div>
             <div className="flex flex-col leading-none">
@@ -126,16 +135,13 @@ export default function Header() {
 
               {searchQuery.trim() && isSearchOpen && (
                 <div className="absolute left-0 right-0 top-[calc(100%+12px)] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_22px_50px_rgba(15,23,42,0.12)]">
-                  <div className="max-h-[300px] overflow-y-auto p-2">
+                  <div className="max-h-75 overflow-y-auto p-2">
                     {matchingTopics.length > 0 ? (
                       matchingTopics.map((topic) => (
                         <Link
                           key={topic.slug}
                           href={`/blog/${topic.slug}`}
-                          onClick={() => {
-                            setIsSearchOpen(false);
-                            setSearchQuery('');
-                          }}
+                          onMouseDown={(e) => handleTopicClick(e, topic.slug)}
                           className="group flex items-center justify-between gap-3 rounded-xl border border-transparent px-3 py-2.5 text-left transition hover:border-blue-200 hover:bg-blue-50"
                         >
                           <div>
@@ -192,16 +198,13 @@ export default function Header() {
 
             {searchQuery.trim() && isSearchOpen && (
               <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
-                <div className="max-h-[260px] overflow-y-auto p-2">
+                <div className="max-h-65 overflow-y-auto p-2">
                   {matchingTopics.length > 0 ? (
                     matchingTopics.map((topic) => (
                       <Link
                         key={topic.slug}
                         href={`/blog/${topic.slug}`}
-                        onClick={() => {
-                          setIsSearchOpen(false);
-                          setSearchQuery('');
-                        }}
+                        onMouseDown={(e) => handleTopicClick(e, topic.slug)}
                         className="group flex items-center justify-between gap-3 rounded-xl border border-transparent px-3 py-2.5 text-left transition hover:border-blue-200 hover:bg-blue-50"
                       >
                         <div>

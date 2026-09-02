@@ -33,11 +33,11 @@ export default function BrandCoverage() {
           </Link>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="animate-stagger grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {brands.map(({ name, details }) => (
             <div
               key={name}
-              className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_55px_rgba(15,23,42,0.2)] backdrop-blur-sm"
+              className="premium-card rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_55px_rgba(15,23,42,0.2)] backdrop-blur-sm"
             >
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-100 ring-1 ring-blue-200/20">
                 <BadgeCheck className="h-5 w-5" />

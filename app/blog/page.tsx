@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CalendarDays, Clock3, Sparkles, Search, ShieldCheck, Printer, Wifi, PencilRuler } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CalendarDays, Clock3, Sparkles, Search, ShieldCheck, Printer, Wifi, PencilRuler } from 'lucide-react';
 import { blogTopics } from '../data/blogs';
 
 const normalizeText = (value: string) => value.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
@@ -35,11 +35,12 @@ const categoryCards = [
 ];
 
 const quickSearches = ['offline', 'toner', 'wifi', 'cartridge', 'canon', 'epson'];
+const articlesPerPage = 9;
 
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams?: Promise<{ q?: string }>;
+  searchParams?: Promise<{ q?: string; page?: string }>;
 }) {
   const params = searchParams ? await searchParams : {};
   const query = typeof params.q === 'string' ? params.q : '';
@@ -47,10 +48,21 @@ export default async function BlogPage({
   const filteredTopics = blogTopics.filter((topic) => topicMatchesQuery(topic, cleanedQuery));
   const visibleTopics = filteredTopics.length > 0 ? filteredTopics : blogTopics;
   const featuredTopic = filteredTopics[0] ?? blogTopics[0];
+  const requestedPage = Number.parseInt(typeof params.page === 'string' ? params.page : '1', 10);
+  const totalPages = Math.max(1, Math.ceil(visibleTopics.length / articlesPerPage));
+  const currentPage = Number.isFinite(requestedPage) ? Math.min(Math.max(requestedPage, 1), totalPages) : 1;
+  const paginatedTopics = visibleTopics.slice((currentPage - 1) * articlesPerPage, currentPage * articlesPerPage);
+  const pageHref = (page: number) => {
+    const search = new URLSearchParams();
+    if (cleanedQuery) search.set('q', cleanedQuery);
+    if (page > 1) search.set('page', String(page));
+    const queryString = search.toString();
+    return queryString ? `/blog?${queryString}` : '/blog';
+  };
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 py-16 text-white sm:py-20">
+      <section className="relative overflow-hidden border-b border-slate-800 bg-linear-to-b from-slate-900 via-slate-900 to-slate-950 py-16 text-white sm:py-20">
         <div className="pointer-events-none absolute left-1/4 top-0 h-96 w-96 rounded-full bg-[#1963ff]/15 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
 
@@ -188,7 +200,7 @@ export default async function BlogPage({
         </div>
 
         <div id="latest-guides" className="mb-12 grid grid-cols-1 items-stretch gap-6 xl:grid-cols-12">
-          <article className="flex flex-col justify-between overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_22px_50px_rgba(15,23,42,0.04)] xl:col-span-8">
+          <Link href={`/blog/${featuredTopic.slug}`} className="group flex flex-col justify-between overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_22px_50px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_26px_55px_rgba(37,99,235,0.1)] xl:col-span-8">
             <div className="space-y-4 p-6 sm:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <span className="rounded-full bg-[#1963ff]/10 px-3 py-1 text-xs font-bold text-[#1963ff]">
@@ -206,7 +218,7 @@ export default async function BlogPage({
                 </div>
               </div>
 
-              <h3 className="text-2xl font-extrabold tracking-[-0.05em] text-slate-900 sm:text-3xl">
+              <h3 className="text-2xl font-extrabold tracking-tighter text-slate-900 sm:text-3xl">
                 {featuredTopic.title}
               </h3>
 
@@ -219,15 +231,12 @@ export default async function BlogPage({
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                 By {featuredTopic.author}
               </span>
-              <Link
-                href={`/blog/${featuredTopic.slug}`}
-                className="inline-flex items-center gap-2 rounded-full bg-[#1963ff] px-5 py-2.5 text-xs font-bold text-white shadow-[0_12px_24px_rgba(25,99,255,0.28)] transition hover:bg-[#1554db]"
-              >
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#1963ff] px-5 py-2.5 text-xs font-bold text-white shadow-[0_12px_24px_rgba(25,99,255,0.28)] transition group-hover:bg-[#1554db]">
                 Read guide
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </span>
             </div>
-          </article>
+          </Link>
 
           <aside className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_20px_44px_rgba(15,23,42,0.03)] xl:col-span-4">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-blue-700">
@@ -283,11 +292,12 @@ export default async function BlogPage({
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {visibleTopics.map((topic) => {
+            {paginatedTopics.map((topic) => {
               const isHighlighted = cleanedQuery && topicMatchesQuery(topic, cleanedQuery);
 
               return (
-                <article
+                <Link
+                  href={`/blog/${topic.slug}`}
                   key={topic.slug}
                   className={[
                     'group flex flex-col justify-between rounded-[30px] border p-6 transition-all duration-200 sm:p-7',
@@ -318,19 +328,61 @@ export default async function BlogPage({
 
                   <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-5">
                     <span className="text-[11px] font-medium text-slate-500">{topic.publishedAt}</span>
-                    <Link
-                      href={`/blog/${topic.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1963ff] hover:underline"
-                    >
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1963ff] group-hover:underline">
                       Read article
                       <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    </span>
                   </div>
-                </article>
+                </Link>
               );
             })}
           </div>
         )}
+
+        {!cleanedQuery || filteredTopics.length > 0 ? (
+          <nav className="mt-10 flex items-center justify-center gap-2" aria-label="Blog pagination">
+            <Link
+              href={pageHref(currentPage - 1)}
+              aria-disabled={currentPage === 1}
+              className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border text-sm transition ${
+                currentPage === 1
+                  ? 'pointer-events-none border-slate-200 text-slate-300'
+                  : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:text-blue-700'
+              }`}
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span className="sr-only">Previous page</span>
+            </Link>
+
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+              <Link
+                key={page}
+                href={pageHref(page)}
+                aria-current={page === currentPage ? 'page' : undefined}
+                className={`inline-flex h-10 min-w-10 items-center justify-center rounded-xl border px-3 text-sm font-semibold transition ${
+                  page === currentPage
+                    ? 'border-blue-600 bg-blue-600 text-white shadow-[0_10px_22px_rgba(37,99,235,0.2)]'
+                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:text-blue-700'
+                }`}
+              >
+                {page}
+              </Link>
+            ))}
+
+            <Link
+              href={pageHref(currentPage + 1)}
+              aria-disabled={currentPage === totalPages}
+              className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border text-sm transition ${
+                currentPage === totalPages
+                  ? 'pointer-events-none border-slate-200 text-slate-300'
+                  : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:text-blue-700'
+              }`}
+            >
+              <ArrowRight className="h-4 w-4" />
+              <span className="sr-only">Next page</span>
+            </Link>
+          </nav>
+        ) : null}
       </div>
     </>
   );

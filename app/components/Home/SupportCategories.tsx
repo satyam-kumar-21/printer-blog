@@ -49,11 +49,11 @@ export default function SupportCategories() {
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="animate-stagger grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {items.map(({ title, text, icon: Icon }) => (
             <div
               key={title}
-              className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.03)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_25px_55px_rgba(37,99,235,0.06)]"
+              className="premium-card rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.03)] transition duration-200 hover:border-blue-200 hover:shadow-[0_25px_55px_rgba(37,99,235,0.06)]"
             >
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
                 <Icon className="h-5 w-5" />

@@ -35,11 +35,11 @@ export default function PopularFixes() {
           </Link>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="animate-stagger grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {fixes.map((fix, index) => (
             <div
               key={fix}
-              className="group flex items-center justify-between gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_32px_rgba(15,23,42,0.04)]"
+              className="premium-card group flex items-center justify-between gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_32px_rgba(15,23,42,0.04)]"
             >
               <div className="flex items-center gap-4">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-sm font-bold text-blue-700">
