@@ -20,11 +20,11 @@ export default function SupportPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-16 sm:py-24 text-slate-900">
+    <div className="min-h-screen bg-slate-50 py-8 sm:py-12 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Header */}
-        <div className="relative overflow-hidden rounded-[32px] border border-slate-800 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-8 text-white shadow-[0_30px_80px_rgba(15,23,42,0.25)] sm:p-12">
+        <div className="relative overflow-hidden rounded-4xl border border-slate-800 bg-linear-to-b from-slate-900 via-slate-900 to-slate-950 p-8 text-white shadow-[0_30px_80px_rgba(15,23,42,0.25)] sm:p-12">
           <div className="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-[#1963ff]/15 blur-3xl" />
           <div className="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
 
